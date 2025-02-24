@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxiqv6bt7v4e3"]
+
+[ext_resource type="Texture2D" uid="uid://dltqv0jyhatd6" path="res://assets/images/sand.png" id="1_7p18f"]
+
+[node name="Landscape" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("1_7p18f")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(1.6, 1.60521)
+polygon = PackedVector2Array(-512, 197, -487.5, 190.629, -375, 191.875, -358, 183, -322, 183, -306.875, 183.776, -293.75, 181.907, -268.125, 170.694, -247, 161, -186.25, 151.382, -137.5, 152.005, -115, 157, -100.625, 160.103, -90.625, 158.857, -46.25, 134.562, -15, 118.987, 24, 118, 34, 127, 81, 127, 99, 134, 286.875, 127.086, 305, 118.987, 321.25, 118.987, 335, 111, 384, 111, 406.875, 119.61, 420.625, 118.987, 432.5, 111.512, 453.75, 110.266, 472.5, 103.413, 511, 103, 515, 105, 513, 254, -510, 257)
