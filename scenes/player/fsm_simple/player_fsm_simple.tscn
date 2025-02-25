@@ -1,9 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://x52d702gei02"]
+[gd_scene load_steps=13 format=3 uid="uid://cnu5877icj8c5"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_fsyew"]
 [ext_resource type="Texture2D" uid="uid://c83rxynjhs47f" path="res://assets/sprites/character_round_purple.png" id="2_4jsni"]
 [ext_resource type="Resource" uid="uid://5ddqo44t0kdo" path="res://resources/player_movement_stats_trials.tres" id="2_p2uwu"]
-[ext_resource type="PackedScene" uid="uid://b1dov3m75a7bt" path="res://scenes/player_control_spaghetti.tscn" id="3_jcj1r"]
+[ext_resource type="PackedScene" uid="uid://2ahdq5u6f7ig" path="res://scenes/player/fsm_simple/player_control_fsm_simple.tscn" id="4_noww3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_74f7x"]
 radius = 19.0
@@ -201,7 +201,8 @@ _data = {
 "run": SubResource("Animation_8ngms")
 }
 
-[node name="Player" type="CharacterBody2D"]
+[node name="PlayerFSMSimple" type="CharacterBody2D"]
+z_index = 10
 script = ExtResource("1_fsyew")
 movement_stats = ExtResource("2_p2uwu")
 
@@ -221,5 +222,6 @@ libraries = {
 "": SubResource("AnimationLibrary_l6b87")
 }
 autoplay = "idle"
+playback_default_blend_time = 0.2
 
-[node name="PlayerControlSpaghetti" parent="." instance=ExtResource("3_jcj1r")]
+[node name="PlayerControlFSMSimple" parent="." instance=ExtResource("4_noww3")]

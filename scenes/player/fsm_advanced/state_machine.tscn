@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://db312k8eb4ffa"]
+
+[ext_resource type="Script" path="res://scripts/fsm_advanced/state_machine.gd" id="1_hylts"]
+[ext_resource type="Script" path="res://scripts/fsm_advanced/state_base.gd" id="2_fka8u"]
+
+[node name="StateMachine" type="Node" node_paths=PackedStringArray("default_state")]
+script = ExtResource("1_hylts")
+default_state = NodePath("Node")
+debug_mode = false
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("2_fka8u")
