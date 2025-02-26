@@ -1,9 +1,14 @@
-[gd_scene load_steps=13 format=3 uid="uid://0ly4at27itsc"]
+[gd_scene load_steps=18 format=3 uid="uid://0ly4at27itsc"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_whyri"]
 [ext_resource type="Resource" uid="uid://5ddqo44t0kdo" path="res://resources/player_movement_stats_trials.tres" id="2_kgc75"]
 [ext_resource type="Texture2D" uid="uid://c83rxynjhs47f" path="res://assets/sprites/character_round_purple.png" id="3_dq6e6"]
 [ext_resource type="PackedScene" uid="uid://db312k8eb4ffa" path="res://scenes/player/fsm_advanced/state_machine.tscn" id="4_d4q6v"]
+[ext_resource type="Script" path="res://scripts/fsm_advanced/player_states/player_state_idle.gd" id="5_vd4g5"]
+[ext_resource type="Script" path="res://scripts/fsm_advanced/player_states/player_state_run.gd" id="6_ccfqu"]
+[ext_resource type="Script" path="res://scripts/fsm_advanced/player_states/player_state_jump.gd" id="7_pbq0d"]
+[ext_resource type="Script" path="res://scripts/fsm_advanced/player_states/player_state_falling.gd" id="8_ccfjh"]
+[ext_resource type="Script" path="res://scripts/fsm_advanced/player_states/player_state_crouch.gd" id="9_2btep"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_74f7x"]
 radius = 19.0
@@ -222,6 +227,22 @@ libraries = {
 "": SubResource("AnimationLibrary_l6b87")
 }
 autoplay = "idle"
-playback_default_blend_time = 0.2
 
-[node name="StateMachine" parent="." instance=ExtResource("4_d4q6v")]
+[node name="StateMachine" parent="." node_paths=PackedStringArray("default_state") instance=ExtResource("4_d4q6v")]
+default_state = NodePath("PlayerStateIdle")
+debug_mode = true
+
+[node name="PlayerStateIdle" type="Node" parent="StateMachine"]
+script = ExtResource("5_vd4g5")
+
+[node name="PlayerStateRun" type="Node" parent="StateMachine"]
+script = ExtResource("6_ccfqu")
+
+[node name="PlayerStateJump" type="Node" parent="StateMachine"]
+script = ExtResource("7_pbq0d")
+
+[node name="PlayerStateFalling" type="Node" parent="StateMachine"]
+script = ExtResource("8_ccfjh")
+
+[node name="PlayerStateCrouch" type="Node" parent="StateMachine"]
+script = ExtResource("9_2btep")

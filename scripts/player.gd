@@ -5,7 +5,7 @@ class_name Player extends CharacterBody2D
 @onready var body: Node2D = $Body
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-#var states:PlayerStateNames = PlayerStateNames.new()
+var states:PlayerStatesNames = PlayerStatesNames.new()
 var animations:PlayerAnimations = PlayerAnimations.new()
 
 func set_facing_direction(x:float) -> void:

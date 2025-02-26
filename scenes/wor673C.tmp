@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://bxiqv6bt7v4e3" path="res://scenes/landscape.tscn" id="1_nw52t"]
 [ext_resource type="PackedScene" uid="uid://x52d702gei02" path="res://scenes/player/spaghetti/player_spaghetti.tscn" id="2_3o3yk"]
 [ext_resource type="PackedScene" uid="uid://d218m3l6klcb4" path="res://scenes/platform.tscn" id="4_chvpq"]
-[ext_resource type="PackedScene" uid="uid://cd4k4gk8w733" path="res://scenes/gbc_shield.tscn" id="5_f6isf"]
 [ext_resource type="PackedScene" uid="uid://cnu5877icj8c5" path="res://scenes/player/fsm_simple/player_fsm_simple.tscn" id="5_gn0y7"]
 [ext_resource type="PackedScene" uid="uid://0ly4at27itsc" path="res://scenes/player/fsm_advanced/player_fsm_advanced.tscn" id="6_52rxx"]
-[ext_resource type="Script" path="res://scripts/game_controller.gd" id="7_s7ewg"]
+[ext_resource type="Script" path="res://scenes/game_controller.gd" id="7_s7ewg"]
+[ext_resource type="PackedScene" uid="uid://cd4k4gk8w733" path="res://scenes/gbc_shield.tscn" id="8_0e2i8"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_aatou"]
 
@@ -58,8 +58,8 @@ position = Vector2(899, 428)
 [node name="Platform3" parent="Platforms" instance=ExtResource("4_chvpq")]
 position = Vector2(448, 269)
 
-[node name="GbcShield" parent="Platforms" instance=ExtResource("5_f6isf")]
-position = Vector2(584, 500)
+[node name="GbcShield" parent="Platforms" instance=ExtResource("8_0e2i8")]
+position = Vector2(645, 515)
 
 [node name="PlayerFSMSimple" parent="." instance=ExtResource("5_gn0y7")]
 position = Vector2(937, 579)

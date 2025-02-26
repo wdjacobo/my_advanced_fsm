@@ -8,7 +8,7 @@ func hello():
 	pass
 
 func _ready():
-	print("Se están borrando los nodos de los players no utilizados")
-	#remove_child(player_spaghetti)
+	print("Se están borrando los nodos de los players no utilizados en el script world.gd")
+	remove_child(player_spaghetti)
 	remove_child(player_fsm_simple)
-	remove_child(player_fsm_advanced)
+	#remove_child(player_fsm_advanced)
